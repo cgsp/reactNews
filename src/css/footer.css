@@ -1,0 +1,13 @@
+.red{
+  color: red;
+}
+.f15{
+  font-size: 15px;
+}
+.dib{
+  display: inline;
+}
+
+.father .son{
+  flex: 1;
+}
