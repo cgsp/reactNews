@@ -1,0 +1,27 @@
+.mobile{
+  background-color: #f6f6f6;
+  font-size: 1.5;
+}
+.mobile .mobile-header{
+  padding: 0.1rem;
+  border-bottom: 1px solid #2db7f5;
+}
+.mobile .mobile-header .logo{
+  width: 0.35rem;
+  height: 0.35rem;
+  vertical-align: middle;
+}
+.mobile .mobile-header span{
+  padding-left: 5px;
+  font-size: 0.2rem;
+  font-weight: 400;
+  vertical-align: middle;
+  color: #57c5f7;
+}
+
+.mobile .mobile-footer{
+  text-align: center;
+  line-height: 1.5;
+  font-size: 0.15rem;
+  font-weight: 400;
+}
