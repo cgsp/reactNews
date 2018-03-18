@@ -1,16 +1,10 @@
 import React from 'react';
-import { Row, Col, Menu, Icon, Message, Form, Input, Tabs, Button, Checkbox} from 'antd';
+import { Row, Col, Menu, Icon, Message, Form, Input, Tabs, Button, Checkbox } from 'antd';
+
+
 export default class MobileHeaderComponent extends React.Component {
   constructor() {
     super();
-    this.state = {
-      current: 'top'
-    }
-  }
-  handleClick(item) {
-    this.setState({
-      current: item.key
-    })
   }
   render() {
     return (
