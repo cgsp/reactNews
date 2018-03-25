@@ -40,6 +40,7 @@ body {
 }
 
 .pc-container .carousel {
+    float: left;
     width: 400px;
     height: 200px;
 }
@@ -58,4 +59,25 @@ body {
 
 .pc-container .ant-carousel .slick-dots {
     bottom: 3px!important;
+}
+
+.pc-container .tabs_news {
+    float: left;
+    margin-left: 20px;
+    width: 600px;
+    height: 605px;
+}
+
+.pc-container .tabs_news li {
+    font-size: 14px!important;
+    line-height: 25px!important;
+    height: 25px!important;
+}
+
+.pc-container .tabs_news li a {
+    color: rgba(0, 0, 0, 0.6)!important;
+}
+
+.pc-container .tabs_news li a:hover {
+    color: #108ee9!important;
 }
