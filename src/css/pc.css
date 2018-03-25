@@ -34,3 +34,28 @@ body {
 .register .center {
     display: inline-block !important;
 }
+
+.pc-container {
+    margin-top: 10px;
+}
+
+.pc-container .carousel {
+    width: 400px;
+    height: 200px;
+}
+
+.pc-container .ant-carousel .slick-slide {
+    text-align: center;
+    height: 200px;
+    line-height: 200px;
+    background: #364d79;
+    overflow: hidden;
+}
+
+.pc-container .ant-carousel .slick-slide h3 {
+    color: #fff;
+}
+
+.pc-container .ant-carousel .slick-dots {
+    bottom: 3px!important;
+}
