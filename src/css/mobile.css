@@ -25,3 +25,9 @@
   font-size: 0.15rem;
   font-weight: 400;
 }
+
+.mobile .login-logo{
+  float: right;
+  font-size: 25px;
+  color: #57c5f7;
+}

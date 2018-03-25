@@ -1,29 +1,36 @@
-html{
+html {
     font-size: 625%;
 }
-body{
+
+body {
     font-size: 0.2rem;
     line-height: 1.5;
     font-weight: 200;
-    font-family:'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif;
+    font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
 }
+
 .pc-logo {
     display: flex;
     align-items: center;
 }
 
-.pc-logo span{
+.pc-logo span {
     padding-left: 5px;
     font-size: 24px;
 }
 
-.pc-footer{
+.pc-footer {
     text-align: center;
     line-height: 1.5;
     font-size: 0.15rem;
     font-weight: 400;
+}
+
+.register .center {
+    display: inline-block !important;
 }
