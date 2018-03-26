@@ -81,3 +81,25 @@ body {
 .pc-container .tabs_news li a:hover {
     color: #108ee9!important;
 }
+
+.pc-container .top-news-image {
+    margin-top: 215px;
+    background-color: red;
+}
+
+.pc-container .left-container {
+    width: 400px;
+    float: left;
+}
+
+.pc-container .imageblock {
+    float: left;
+}
+
+.pc-container .custom-card {
+    padding: 5px;
+}
+
+.pc-container .custom-card p {
+    color: #999;
+}

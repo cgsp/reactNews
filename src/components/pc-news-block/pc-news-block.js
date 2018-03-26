@@ -33,7 +33,7 @@ export default class PcNewsBlock extends Component {
       : '抱歉，没加载到任何的新闻';
     console.log(newsList);
     return (
-      <div className="top-news-list">
+      <div className="topNewsList">
         <Card>
           <ul>{newsList}</ul>
         </Card>
