@@ -31,7 +31,7 @@ export default class PcNewsImagesBlock extends Component {
 		};
 		const styleH3 = {
 			width: this.props.imageWidth,
-			whiteSpace: 'nowarp',
+			whiteSpace: 'nowrap',
 			overflow: 'hidden',
 			textOverflow: 'ellipsis'
 		};
@@ -43,16 +43,16 @@ export default class PcNewsImagesBlock extends Component {
 							<img style={styleImage} src={item.thumbnail_pic_s} alt="" />
 						</div>
 						<div className="custom-card">
-							<h3 style={styleH3}>{item.title}</h3>
-							<p style={styleH3}>{item.author_name}</p>
+							<h3 title={item.title} style={styleH3}>{item.title}</h3>
+							<p title={item.author_name}>{item.author_name}</p>
 						</div>
 					</Link>
-				</div>
+				</div >
 			))
 			: '抱歉，没加载到任何的新闻';
 		console.log(newsList);
 		return (
-			<div className="top-news-image">
+			<div className="topNewsList">
 				<Card title={this.props.cardTitle} bordered={true} style={{ width: this.props.width }}>
 					{newsList}
 				</Card>

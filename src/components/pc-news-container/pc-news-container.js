@@ -19,8 +19,8 @@ export default class PcNewsContainer extends Component {
 		return (
 			<div>
 				<Row>
-					<Col span={20} offset={2} className="pc-container">
-						<div className="left-container">
+					<Col span={20} offset={2} className="container">
+						<div className="leftContainer">
 							<div className="carousel">
 								<Carousel {...carouselSetting}>
 									<div><img width="400" height="200" src="./src/images/carousel/carousel_1.png" alt="" /></div>

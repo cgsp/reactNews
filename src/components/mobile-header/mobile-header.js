@@ -98,13 +98,11 @@ class MobileHeaderComponent extends React.Component {
       :
       <Icon type="setting" onClick={this.loginModalShow.bind(this, true)} />;
     return (
-      <div className="mobile-header">
+      <div id="mobileheader">
         <header>
-          <img src="./src/images/icon/logo.png" alt="logo" className="logo" />
+					<img src="./src/images/icon/logo.png" alt="logo"/>
           <span>ReactNews</span>
-          <div className="login-logo">
-            {userShow}
-          </div>
+					{userShow}
         </header>
         {/*注册登录的模态框*/}
         <Modal title="用户中心" warpClassName="vertical-center-modal" visible={this.state.modalVisible} onCancel={() => this.loginModalShow(false)} onOk={() => this.loginModalShow(false)} okText="关闭">
