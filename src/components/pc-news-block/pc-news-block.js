@@ -18,7 +18,6 @@ export default class PcNewsBlock extends Component {
       .then(res => res.json())
       .then(json => {
         this.setState({ news: json })
-        // console.log(this.state.news);
       })
   }
 
@@ -31,7 +30,6 @@ export default class PcNewsBlock extends Component {
         </li>
       ))
       : '抱歉，没加载到任何的新闻';
-    console.log(newsList);
     return (
       <div className="topNewsList">
         <Card>

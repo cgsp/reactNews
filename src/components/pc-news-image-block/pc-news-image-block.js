@@ -18,7 +18,6 @@ export default class PcNewsImagesBlock extends Component {
 			.then(res => res.json())
 			.then(json => {
 				this.setState({ news: json })
-				// console.log(this.state.news);
 			})
 	}
 
@@ -39,21 +38,20 @@ export default class PcNewsImagesBlock extends Component {
 			news.map((item, index) => (
 				<div key={index} className="imageblock">
 					<Link to={`details/${item.uniquekey}`} target="_blank">
-						<div className="custom-image">
+						<div className="custom-image" style={{ width: this.props.imageWidth}}>
 							<img style={styleImage} src={item.thumbnail_pic_s} alt="" />
 						</div>
 						<div className="custom-card">
 							<h3 title={item.title} style={styleH3}>{item.title}</h3>
-							<p title={item.author_name}>{item.author_name}</p>
+							<p title={item.author_name} style={styleH3}>{item.author_name}</p>
 						</div>
 					</Link>
 				</div >
 			))
 			: '抱歉，没加载到任何的新闻';
-		console.log(newsList);
 		return (
 			<div className="topNewsList">
-				<Card title={this.props.cardTitle} bordered={true} style={{ width: this.props.width }}>
+				<Card title={this.props.cardTitle} bordered={true} style={{ width: this.props.width}}>
 					{newsList}
 				</Card>
 			</div >
