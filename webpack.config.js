@@ -22,7 +22,11 @@ module.exports = {
       //   loader: 'style!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:10]'
       // },
       // 下面是使用ant-design的样式配置文件
-      { test: /\.css$/, loader: 'style-loader!css-loader' }
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
+      {
+        test: /\.less$/,
+        loader: "style!css!less"
+      }
     ]
   },
   output: {

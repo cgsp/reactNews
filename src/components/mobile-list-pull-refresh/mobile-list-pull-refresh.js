@@ -2,17 +2,13 @@ import React, { Component } from 'react';
 import { Row, Col } from 'antd';
 import { Router, Route, Link, browserHistory } from 'react-router';
 import 'whatwg-fetch';
-import Tloader from 'react-touch-loader';
-export default class MobileList extends Component {
+import ReactPullToRefresh from 'react-pull-to-refresh';
+import { resolve } from 'path';
+export default class MobileListPullToRefresh extends Component {
   constructor() {
     super();
     this.state = {
       news: '',
-      // 用于下拉刷新的几个参数
-      count: 5,
-      hasMore: 0,
-      initializing: 1,
-      refreshedAt: Date.now()
     }
   }
 
@@ -28,45 +24,21 @@ export default class MobileList extends Component {
       })
   }
 
-  loadMore(resolve) {
-    setTimeout(() => {
-      let count = this.state.count;
-      this.setState({
-        count: count + 5
+  handleRefresh(resolve) {
+    const myFetchOptions = {
+      method: 'GET'
+    }
+
+    fetch('http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=yule&count=' + 20, myFetchOptions)
+      .then(res => res.json())
+      .then(json => {
+        this.setState({ news: json })
+        resolve();
       })
-
-
-      const myFetchOptions = {
-        method: 'GET'
-      }
-
-      fetch('http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=' + this.props.type + '&count=' + this.state.count, myFetchOptions)
-        .then(res => res.json())
-        .then(json => {
-          this.setState({ news: json })
-        })
-
-      this.setState({
-        hasMore: count > 0 && count < 50
-      })
-
-
-      resolve();
-
-    }, 2e3);
-  }
-
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        hasMore: 1,
-        initializing: 2
-      })
-    }, 2e3);
   }
 
   render() {
-    const { news, hasMore, initializing, refreshedAt } = this.state;
+    const { news } = this.state;
     const newsList = news.length ?
       news.map((item, index) => (
         <section key={index} className="m_article list-item special_section clearfix">
@@ -94,9 +66,12 @@ export default class MobileList extends Component {
       <div>
         <Row>
           <Col span={24}>
-            <Tloader className="main" onLoadMore={this.loadMore.bind(this)} hasMore={hasMore} initializing={initializing}>
-              {newsList}
-            </Tloader>
+            <ReactPullToRefresh onRefresh={this.handleRefresh.bind(this)} style={{ textAlign: 'center' }}>
+              <span className="genericon genericon-next"></span>
+              <div>
+                {newsList}
+              </div>
+            </ReactPullToRefresh>
           </Col>
         </Row>
       </div>
