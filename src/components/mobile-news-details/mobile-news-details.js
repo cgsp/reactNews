@@ -4,6 +4,7 @@ import { Router, Route, Link, browserHistory } from 'react-router';
 import MobileHeaderComponent from '../mobile-header/mobile-header';
 import MobileFooterComponent from '../mobile-footer/mobile-footer';
 import 'whatwg-fetch';
+import CommonComments from '../common-comments/common-comments';
 export default class MobileNewsDetails extends Component {
   constructor() {
     super();
@@ -37,6 +38,8 @@ export default class MobileNewsDetails extends Component {
             <Col span={24} className="container">
               <div className="articleContainer" dangerouslySetInnerHTML={this.createMarkUp()}>
               </div>
+              {/*评论组件*/}
+              <CommonComments uniquekey={this.props.params.uniquekey} />
             </Col>
           </Row>
         </div>

@@ -94,15 +94,17 @@ class MobileHeaderComponent extends React.Component {
     const passwordError = isFieldTouched('password') && getFieldError('password');
 
     const userShow = this.state.hasLogined ?
-      <Icon type="inbox" />
+      <Link to={'/userCenter'}>
+        <Icon type="inbox" />
+      </Link>
       :
       <Icon type="setting" onClick={this.loginModalShow.bind(this, true)} />;
     return (
       <div id="mobileheader">
         <header>
-					<img src="./src/images/icon/logo.png" alt="logo"/>
+          <img src="./src/images/icon/logo.png" alt="logo" />
           <span>ReactNews</span>
-					{userShow}
+          {userShow}
         </header>
         {/*注册登录的模态框*/}
         <Modal title="用户中心" warpClassName="vertical-center-modal" visible={this.state.modalVisible} onCancel={() => this.loginModalShow(false)} onOk={() => this.loginModalShow(false)} okText="关闭">

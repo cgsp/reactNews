@@ -138,7 +138,7 @@ class PcHeaderComponent extends React.Component {
       <Menu.Item key="logout" className="register">
         <Button type="primary" htmlType="button">{this.state.userNickName}</Button>
         &nbsp;&nbsp;
-        <Link to={'/'} className="center">
+        <Link to={'/userCenter'} className="center">
           <Button type="dashed" htmlType="button">个人中心</Button>
         </Link>
         &nbsp;&nbsp;

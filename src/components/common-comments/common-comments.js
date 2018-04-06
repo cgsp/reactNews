@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Router, Route, Link, hashHistory, browserHistory } from 'react-router';
-import { Row, Col, Menu, Icon, Tabs, message, Form, Input, Button, Checkbox, Modal, Card } from 'antd';
+import { Row, Col, Menu, Icon, Tabs, message, Form, Input, Button, Checkbox, Modal, Card, notification } from 'antd';
 import 'whatwg-fetch';
 const FormItem = Form.Item;
 const SubMenu = Menu.SubMenu;
@@ -52,6 +52,19 @@ class CommonComments extends Component {
     })
   }
 
+  addUserCollection() {
+    let myFectionOption = {
+      method: 'GET'
+    }
+
+    fetch('http://newsapi.gugujiankong.com/Handler.ashx?action=uc&userid=' + localStorage.userId + '&uniquekey=' + this.props.uniquekey, myFectionOption)
+      .then(res => res.json())
+      .then(json => {
+        // 收藏成功之后的全局的提示
+        notification['success']({ message: 'ReactNews的提醒', description: '收藏此文章成功' });
+      })
+  }
+
   render() {
     // 表单的常用的属性
     const { getFieldDecorator, getFieldError, getFieldsError, isFieldTouched } = this.props.form;
@@ -81,6 +94,8 @@ class CommonComments extends Component {
               </FormItem>
               <FormItem>
                 <Button type="primary" htmlType="submit" disabled={hasErrors(getFieldsError())}>提交评论</Button>
+                &nbsp;&nbsp;&nbsp;
+                <Button type="primary" htmlType="button" onClick={this.addUserCollection.bind(this)}>收藏</Button>
               </FormItem>
             </Form>
           </Col>
