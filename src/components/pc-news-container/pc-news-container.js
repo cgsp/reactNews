@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col, Tabs, Carousel } from 'antd';
 import PcNewsBlock from '../pc-news-block/pc-news-block';
 import PcNewsImagesBlock from '../pc-news-image-block/pc-news-image-block';
-
+import PCProducts from '../pc-products/pc-products';
 const TabPane = Tabs.TabPane;
 export default class PcNewsContainer extends Component {
 	constructor() {
@@ -43,6 +43,11 @@ export default class PcNewsContainer extends Component {
 							</TabPane>
 							<TabPane tab="国内" key="3">
 								<PcNewsBlock width="100%" bordered="false" count={21} type={'guonei'} />
+							</TabPane>
+						</Tabs>
+						<Tabs className="tabs_product">
+							<TabPane tab="产品" key="1">
+								<PCProducts />
 							</TabPane>
 						</Tabs>
 						{/*底部的*/}
